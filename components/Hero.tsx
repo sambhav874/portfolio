@@ -43,20 +43,7 @@ const Hero: React.FC = () => {
     minFontSize={36}
   />
 
-        {/* 4. TypeAnimation for Cycling Roles */}
-        <div className="text-xl md:text-3xl text-primary mt-4 h-10 md:h-12 flex items-center justify-center">
-          <TypeAnimation
-            sequence={[
-              'Software Engineer', 2000,
-              'Full-Stack Developer', 2000,
-              'AI Enthusiast', 2000,
-              'Fintech Explorer', 2000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </div>
+        
 
         <p className="mt-4 max-w-2xl mx-auto text-slate-300 text-lg leading-relaxed">
           Computer Science undergraduate crafting AI-driven systems and full-stack applications. Currently building the future at Ninth Quadrant.

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       
-      <div className="px-8 bg-black">
+      <div className="bg-black">
         <Hero />
         <Projects />
         <Skills />
