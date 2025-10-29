@@ -10,11 +10,32 @@ export interface IProject extends Document {
 }
 
 const projectSchema = new Schema<IProject>({
-  title: { type: String, required: true },
-  description: { type: String, required: true },
-  imageUrl: { type: String, required: true },
-  techStack: [{ type: String }],
-  link: { type: String, required: true },
+  title: { 
+    type: String, 
+    required: true,
+    index: true
+  },
+  description: { 
+    type: String, 
+    required: true 
+  },
+  imageUrl: { 
+    type: String, 
+    required: true 
+  },
+  techStack: [{ 
+    type: String,
+    index: true
+  }],
+  link: { 
+    type: String, 
+    required: true,
+    index: true
+  },
+}, {
+  timestamps: false, // Disable timestamps if not needed
+  minimize: true, // Saves space by removing empty objects
+  versionKey: false // Disable version key if not needed
 });
 
 const Project = models.Project || model<IProject>('Project', projectSchema);
