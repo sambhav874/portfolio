@@ -8,6 +8,7 @@ import { ExternalLink, Github } from 'lucide-react';
 // Interface for project data
 interface Project {
   _id: string;
+  id: number;
   title: string;
   description: string;
   techStack: string[];
@@ -27,7 +28,8 @@ const Projects: React.FC = () => {
       try {
         const response = await axios.get<{ success: boolean; data: Project[] }>('/api/projects');
         if (response.data.success) {
-          setProjects(response.data.data);
+          const sortedProjects = [...response.data.data].sort((a, b) => a.id - b.id);
+          setProjects(sortedProjects);
         }
       } catch (error) {
         console.error("Failed to fetch projects:", error);
